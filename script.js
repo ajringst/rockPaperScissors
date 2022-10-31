@@ -39,7 +39,27 @@ function getComputerSelection(){
 
 function playerWon(){
     if ( playerScore === 5 || computerScore === 5 ) {
-        
+        playerScore = 1;
+        computerScore = 0;
+        document.getElementById("player").innerText = playerScore;
+        document.getElementById("computer").innerText = computerScore;
+    }
+    else {
+        playerScore += 1;
+        document.getElementById("player").innerText = playerScore;
+    }
+}
+
+function computerWon(){
+    if ( playerScore === 5 || computerScore === 5 ) {
+        playerScore = 0;
+        computerScore = 1;
+        document.getElementById("player").innerText = playerScore;
+        document.getElementById("computer").innerText = computerScore;
+    }
+    else {
+        computerScore += 1;
+        document.getElementById("computer").innerText = computerScore;
     }
 }
     
@@ -56,13 +76,15 @@ function playRound(playerSelection) {
                 (playerSelection === "scissors" && computerSelection === "paper") || 
                 (playerSelection === "paper" && computerSelection === "rock" )) {
                 document.getElementById("outcome").innerText = "You Won!";
-                console.log(playerSelection)
+                playerWon();
+                console.log(playerSelection);
                 }
 
     else if ((playerSelection === "rock" && computerSelection === "paper") || 
                 (playerSelection === "scissors" && computerSelection === "rock") || 
                 (playerSelection === "paper" && computerSelection === "scissors")) {
                 document.getElementById("outcome").innerText = "You Lost!";
+                computerWon();
                 console.log(playerSelection)
                 }
     else {document.getElementById("outcome").innerText = "Please enter a valid choice!";
