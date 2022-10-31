@@ -46,10 +46,10 @@ button {
     font-weight: 900;
     margin: 16px;
     padding: 16px 28px;
+    transition: 300ms;
 }
 
 button:hover {
-    transition: 300ms;
     translate: 0px 5px;
     background-color: #00ADB6;
 }
