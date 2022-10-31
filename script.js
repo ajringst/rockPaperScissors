@@ -66,27 +66,35 @@ function computerWon(){
 
 function playRound(playerSelection) {
     computerSelection = getComputerSelection();
-    console.log(computerSelection);
     if (playerSelection === computerSelection){
             document.getElementById("outcome").innerText = "You Tied!";
-            console.log(playerSelection);
             }
 
     else if ((playerSelection === "rock" && computerSelection === "scissors") || 
                 (playerSelection === "scissors" && computerSelection === "paper") || 
                 (playerSelection === "paper" && computerSelection === "rock" )) {
-                document.getElementById("outcome").innerText = "You Won!";
                 playerWon();
-                console.log(playerSelection);
+                    if (playerScore === 5){
+                        document.getElementById("outcome").innerText = "You Won The Tournament!";
+                    }
+                    else {
+                        document.getElementById("outcome").innerText = "You Won!";
+                    }
                 }
 
     else if ((playerSelection === "rock" && computerSelection === "paper") || 
                 (playerSelection === "scissors" && computerSelection === "rock") || 
                 (playerSelection === "paper" && computerSelection === "scissors")) {
-                document.getElementById("outcome").innerText = "You Lost!";
                 computerWon();
-                console.log(playerSelection)
+                    if (computerScore ===5){
+                        document.getElementById("outcome").innerText = "You Lost The Tournament!";
+                    }
+                    else {
+                        document.getElementById("outcome").innerText = "You Lost!";
+                    }
+                
                 }
-    else {document.getElementById("outcome").innerText = "Please enter a valid choice!";
+    else {
+        console.log("Error");
     }
 }        
