@@ -36,29 +36,35 @@ function getComputerSelection(){
         alert("You've ran into an error");
     }
 }
+
+function playerWon(){
+    if ( playerScore === 5 || computerScore === 5 ) {
+        
+    }
+}
     
 
 function playRound(playerSelection) {
     computerSelection = getComputerSelection();
     console.log(computerSelection);
     if (playerSelection === computerSelection){
-            document.getElementById("outcome").innerHTML = "You Tied!";
+            document.getElementById("outcome").innerText = "You Tied!";
             console.log(playerSelection);
             }
 
     else if ((playerSelection === "rock" && computerSelection === "scissors") || 
                 (playerSelection === "scissors" && computerSelection === "paper") || 
                 (playerSelection === "paper" && computerSelection === "rock" )) {
-                document.getElementById("outcome").innerHTML = "You Won!";
+                document.getElementById("outcome").innerText = "You Won!";
                 console.log(playerSelection)
                 }
 
     else if ((playerSelection === "rock" && computerSelection === "paper") || 
                 (playerSelection === "scissors" && computerSelection === "rock") || 
                 (playerSelection === "paper" && computerSelection === "scissors")) {
-                document.getElementById("outcome").innerHTML = "You Lost!";
+                document.getElementById("outcome").innerText = "You Lost!";
                 console.log(playerSelection)
                 }
-    else {document.getElementById("outcome").innerHTML = "Please enter a valid choice!";
+    else {document.getElementById("outcome").innerText = "Please enter a valid choice!";
     }
 }        
