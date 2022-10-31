@@ -1,3 +1,8 @@
+/* color scheme = 
+yellow : #EDAE49
+green : #459146
+red : #C2554F*/
+
 body {
     font-family: 'Bebas Neue', cursive;
     display: flex;
@@ -28,6 +33,7 @@ button {
 
 svg {
     padding: 4px;
+    pointer-events: none;
 }
 
 
